@@ -23,6 +23,8 @@ const Home: NextPage = () => {
 
   return (
     <div className={styles.container}>
+      <p>a</p>
+      <p>c</p>
       <ul>
         {pokemonList.map((pokemon) => (
           <li key={pokemon.name}>
