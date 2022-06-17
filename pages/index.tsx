@@ -1,8 +1,6 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
 import { useEffect, useState } from "react";
-import usePokemon from "../hooks/usePokemon/usePokemon";
+import { PokemonType } from "../interfaces/pokemon";
 import PokemonService from "../services/PokemonService";
 import styles from "../styles/Home.module.css";
 
@@ -24,8 +22,8 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <ul>
-        {pokemonList.map((pokemon) => (
-          <li key={pokemon.name}>
+        {pokemonList.map((pokemon: PokemonType) => (
+          <li key={getPokemonId(pokemon.url)}>
             <img src={getPokemonId(pokemon.url)} alt={pokemon.name} />
             <p>{pokemon.name}</p>
           </li>
