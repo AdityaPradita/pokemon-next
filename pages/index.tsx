@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
-import { PokemonListItem } from "../components/PokemonListItem";
+import { PokemonListItem } from "../components/PokemonListItem/PokemonListItem";
 import { PokemonType } from "../interfaces/pokemon";
 import PokemonService from "../services/PokemonService";
 import styles from "../styles/Home.module.css";

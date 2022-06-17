@@ -1,4 +1,5 @@
-import { PokemonType } from "../interfaces/pokemon";
+import { PokemonType } from "../../interfaces/pokemon";
+import styles from "./PokemonListItem.module.scss";
 
 type PokemonListItemPropsType = {
   pokemon: PokemonType;
@@ -9,7 +10,7 @@ export const PokemonListItem: Function = ({
   pokemon,
   pokemonImage,
 }: PokemonListItemPropsType) => (
-  <li>
+  <li className={styles.PokemonListItem}>
     <img src={pokemonImage} alt={pokemon.name} />
     <p>{pokemon.name}</p>
   </li>
