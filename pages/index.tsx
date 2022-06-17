@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
+import { PokemonListItem } from "../components/PokemonListItem";
 import { PokemonType } from "../interfaces/pokemon";
 import PokemonService from "../services/PokemonService";
 import styles from "../styles/Home.module.css";
@@ -13,7 +14,7 @@ const Home: NextPage = () => {
     });
   }, []);
 
-  const getPokemonId = (url: String) => {
+  const getPokemonImage = (url: String) => {
     var result = url.split("/");
     var pokemonId = result[result.length - 2];
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`;
@@ -23,10 +24,11 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <ul>
         {pokemonList.map((pokemon: PokemonType) => (
-          <li key={getPokemonId(pokemon.url)}>
-            <img src={getPokemonId(pokemon.url)} alt={pokemon.name} />
-            <p>{pokemon.name}</p>
-          </li>
+          <PokemonListItem
+            key={getPokemonImage(pokemon.url)}
+            pokemon={pokemon}
+            pokemonImage={getPokemonImage(pokemon.url)}
+          />
         ))}
       </ul>
     </div>
