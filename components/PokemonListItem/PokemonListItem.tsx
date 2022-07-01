@@ -11,7 +11,12 @@ export const PokemonListItem: Function = ({
   pokemonImage,
 }: PokemonListItemPropsType) => (
   <li className={styles.PokemonListItem}>
-    <img src={pokemonImage} alt={pokemon.name} />
-    <p>{pokemon.name}</p>
+    <header></header>
+    <div className={styles.PokemonListItem__imageContainer}>
+      <img src={pokemonImage} alt={pokemon.name} />
+    </div>
+    <div className={styles.PokemonListItem__detail}>
+      <p>{pokemon.name}</p>
+    </div>
   </li>
 );

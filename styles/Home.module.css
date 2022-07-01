@@ -1,4 +1,7 @@
 .container {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  color: #212529;
+  background-color: #fff;
   padding: 0 2rem;
 }
 
