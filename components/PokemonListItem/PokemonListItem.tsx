@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PokemonType } from "../../interfaces/pokemon";
 import styles from "./PokemonListItem.module.scss";
 
@@ -8,15 +9,18 @@ type PokemonListItemPropsType = {
 
 export const PokemonListItem: Function = ({
   pokemon,
+  pokemonId,
   pokemonImage,
 }: PokemonListItemPropsType) => (
   <li className={styles.PokemonListItem}>
-    <header></header>
-    <div className={styles.PokemonListItem__imageContainer}>
-      <img src={pokemonImage} alt={pokemon.name} />
-    </div>
-    <div className={styles.PokemonListItem__detail}>
-      <p>{pokemon.name}</p>
-    </div>
+    <a href={`/pokemon/${pokemonId}`}>
+      <header></header>
+      <div className={styles.PokemonListItem__imageContainer}>
+        <img src={pokemonImage} alt={pokemon.name} />
+      </div>
+      <div className={styles.PokemonListItem__detail}>
+        <p>{pokemon.name}</p>
+      </div>
+    </a>
   </li>
 );

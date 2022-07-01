@@ -20,6 +20,11 @@ const Home: NextPage = () => {
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`;
   };
 
+  const getPokemonId = (url: String) => {
+    var result = url.split("/");
+    return result[result.length - 2];
+  };
+
   return (
     <div className={styles.container}>
       <ul>
@@ -27,6 +32,7 @@ const Home: NextPage = () => {
           <PokemonListItem
             key={getPokemonImage(pokemon.url)}
             pokemon={pokemon}
+            pokemonId={getPokemonId(pokemon.url)}
             pokemonImage={getPokemonImage(pokemon.url)}
           />
         ))}
