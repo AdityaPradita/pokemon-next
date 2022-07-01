@@ -9,10 +9,12 @@ const PokemonDetail = () => {
   const [pokemon, setPokemon] = useState();
 
   useEffect(() => {
-    PokemonService.fetchPokemonDetail(id).then((result) => {
-      setPokemon(result);
-    });
-  }, []);
+    if (id) {
+      PokemonService.fetchPokemonDetail(id).then((result) => {
+        setPokemon(result);
+      });
+    }
+  }, [id]);
 
   console.log(pokemon);
 
