@@ -31,7 +31,7 @@ const PokemonDetail = () => {
       <div>
         <h1>{pokemon?.name}</h1>
         <img
-          src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${id}.svg`}
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
           alt={pokemon?.name}
         />
       </div>
